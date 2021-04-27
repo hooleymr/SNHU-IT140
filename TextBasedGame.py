@@ -17,7 +17,7 @@ rooms = {
     'Study': {'East': 'Scrying Chamber', 'item': 'Lord Dracula'}
 }
 
-def winner():
+def loser():
     print('--------------------------------------------------------------------')
     print('You entered the study and found Lord Dracula.')
     print('You do not have the items needed to defeat him and became his supper')
@@ -29,7 +29,7 @@ def winner():
     print('--------------------------------------------------------------------')
     exit()
 
-def loser():
+def winner():
     print('--------------------------------------------------------------------')
     print('You entered the study and found Lord Dracula.')
     print('You have collected all the items and can defeat him!')
@@ -56,9 +56,9 @@ def main():
 # GAME PLAY LOOP #
     while True:
         if current_room == 'Study' and len(inventoryList) < 6:  #VICTORY CHECKS
-            winner()
-        elif current_room == 'Study' and len(inventoryList) >= 6:  #VICTORY CHECKS
             loser()
+        elif current_room == 'Study' and len(inventoryList) >= 6:  #VICTORY CHECKS
+            winner()
 
         print('--------------------------------------------------------------------')
         print('You are currently in the:', current_room)
